@@ -1,0 +1,32 @@
+{
+  "name": "shopping",
+  "version": "1.0.0",
+  "description": "這個網站是綜合大一到大四所學到的東西，實作出一個購物網站。它是以node.js中的Koa2.0搭配MongoDB資料庫為Server端，前端排版採用Bootstrap。測試工具有supertest和testcafe",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wycmaker/shopping.git"
+  },
+  "keywords": [
+    "node.js",
+    "koa",
+    "mongodb",
+    "bootstrap"
+  ],
+  "author": "王岳駿",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wycmaker/shopping/issues"
+  },
+  "homepage": "https://github.com/wycmaker/shopping#readme",
+  "dependencies": {
+    "koa": "^2.8.1",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.12.3",
+    "koa-static": "^5.0.0"
+  }
+}
