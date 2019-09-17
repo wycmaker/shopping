@@ -1,0 +1,2 @@
+# shopping
+這個網站是綜合大一到大四所學到的東西，實作出一個購物網站。它是以node.js中的Koa2.0搭配MongoDB資料庫為Server端，前端排版採用Bootstrap。測試工具有supertest和testcafe
