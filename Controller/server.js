@@ -3,12 +3,23 @@ const koa = require("koa")
 const router = require("koa-router")
 const session = require("koa-session")
 const logger = require("koa-logger")
-const koastatic = require("koa-static")
 
 const app = new koa()
 const Route = router()
 
-app.keys = ['some secret hurr']
+/* function */
+
+const user = require("./user")
+const commodity = require("./commodity")
+const cart = require("./shoppingcart")
+const payment = require("./payment")
+const search = require("./search")
+const order = require("./order")
+const management = require("./management")
+
+//const V = require("../View/main")
+
+app.keys = ['My secret']
 
 const CONFIG = {
   key: 'koa:sess',
@@ -22,30 +33,17 @@ const CONFIG = {
 }
 
 Route
-  .get('/index', index)
+  .get('/', user.index)
+  .get('/signup', user.signup)
+  .post('/checkuser', user.checkuser)
 
 app.use(logger())
-app.use(koastatic('../View'))
 app.use(session(CONFIG, app))
 app.use(Route.routes())
 
-/* function */
-
-const user = require("./user")
-const commodity = require("./commodity")
-const cart = require("./shoppingcart")
-const payment = require("./payment")
-const search = require("./search")
-const order = require("./order")
-const management = require("./management")
-
-
-async function index(ctx) {
-  ctx.body = {content:"Hello world!"}
-  ctx.status = 200
+async function index (ctx) {
+  ctx.body = await V.index()
 }
-
-
 
 if (!module.parent) {
     app.listen(3000)
